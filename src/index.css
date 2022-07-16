@@ -21,6 +21,47 @@ code {
   list-style-type: none;
 
 }
+
+.cartOverlay{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.699);
+  height: 100vh;
+}
+.cartDisplay{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32.5%;
+  background-color: white;
+  height: 100%;
+  padding: 2rem 3rem;
+  outline: 1px dotted red;
+}
+.cartDisplay h1{
+  line-height: 28px;
+  /* font-size: 1.2rem; */
+  font-weight: 800;
+}
+.cartDisplay .exit{
+  position: relative;
+  right: 0;
+  width: 100%;
+  text-align: end;
+  border: none;
+  background-color: white;
+  
+}
+.cartDisplay .exit svg{
+  width: 30px;
+  cursor: pointer;
+  height: 30px;
+  /* padding: 10px; */
+}
+
 .home{
   width: 100%;
   min-height: 100vh;
@@ -190,7 +231,31 @@ code {
 .header-shop-right button:nth-child(1){
   margin-right: 4.5rem;
 }
-
+.header-shop-right button:nth-child(2){
+  position: relative;
+}
+.header-shop-right .cart-amount{
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: -35px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.header-shop-right .cart-amount svg{
+  z-index: -1;
+  position: absolute;
+  fill: black;
+  bottom: 50%;
+  right: -7px;
+  transform: translate(0, 50%);
+}
 
 
 .mainShop{
@@ -319,3 +384,197 @@ code {
 .card .card-info > span span{
   font-size: 0.95rem;
 }
+
+
+
+.product .header-shop{
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.product .header-shop .header-shop-left a:nth-child(2){
+  position: relative;
+  transition: 0.25s ease-in;
+  padding-right: 0.5rem;
+}
+.product .header-shop .header-shop-left a:nth-child(2):hover::before{
+  width: 100%;
+}
+.product .header-shop .header-shop-left a:nth-child(2):hover{
+  color: white;
+}
+.product .header-shop .header-shop-left a:nth-child(2)::before{
+  content: '';
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.25s ease-in;
+  background-color: black;
+  z-index: -1;
+}
+
+
+
+/* product-main */
+.product svg, .product button{
+  fill: white;
+  background-color: black;
+}
+.product-main{
+  /* padding: 1rem 4rem; */
+  display: flex;
+  align-items: center;
+  outline: 1px dotted red;
+  position: relative;
+}
+.hover-img-change{
+  position: absolute;
+  padding: 0 4rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100% - 81px);
+  display: flex;
+}
+.hover-img-change-left{
+  outline: 1px dotted violet;
+  width: 50%;
+}
+.hover-img-change-left:hover{
+  cursor: none;
+}
+.hover-img-change-right{
+  width: 50%;
+  outline: 1px dotted lightcoral;
+}
+.product-main-left{
+  padding-left: 4rem;
+  outline: 1px dotted red;
+  /* display: flex; */
+  width: 75%;
+  /* align-items: center; */
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  min-height: 100vh;
+  position: relative;
+  align-items: center;
+
+
+
+  
+}
+.product .header-shop-right .cart-amount{
+  background: white !important; 
+  color: black;
+}
+.product .header-shop-right .cart-amount svg{
+  fill: white;
+  z-index: -1;
+}
+
+.product-main-right{
+  width: 25%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+}
+.product-main-right > span{
+  padding: 3rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 2.5px;
+  /* outline: 1px dotted red;
+  display: inline-block; */
+}
+.product-main-right > button{
+  background-color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  color: black;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  padding: 0.5rem 1.5rem;
+  position: relative;
+}
+.product-main-right > button::after{
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid white;
+  transition: transform 0.05s ease-in;
+  /* transform: translate3d(3px,3px,0); */
+}
+.product-main-right > button:hover:after{
+  transform: translate3d(3px,3px,0);
+}
+
+.letters{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  font-weight: 900;
+}
+
+
+/* .product-main-left-left{
+  outline: 1px dotted red;
+  width: 50%;
+
+} */
+.product-main-left-left h1{
+  font-size: 3.5rem;
+  width: 20rem;
+}
+/* .product-main-left-right{
+  outline: blue 1px dotted;
+  width: 50%;
+} */
+.product-main-left-right{
+  height: 100%;
+  position: relative;
+
+}
+.product-main-left-right h3{
+  position: absolute;
+  right: 6rem;
+  bottom: 5rem;
+}
+
+.change-gal-img{
+  position: absolute;
+  display: flex;
+  right: 5.75rem;
+  bottom: 1rem;
+  gap: 1rem;
+}
+.change-gal-img > button{
+  background-color: rgba(0, 0, 0, 0.363);
+  color: black;
+  width: 40px;
+  border: none;
+  height: 40px;
+  border-radius: 50%;
+
+}
+.change-gal-img button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.change-gal-img button > *{
+  background-color: rgba(255, 255, 255, 0);
+  fill: black;
+}
+
