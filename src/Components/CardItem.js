@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 export default function CardItem({imgOne, imgTwo, name, price, id, product}) {
-  // console.log(product)
   return (
     <li className="card">
       <Link to={{
@@ -10,7 +9,7 @@ export default function CardItem({imgOne, imgTwo, name, price, id, product}) {
       }}>
         <div className="img">
           <img src={imgOne} alt={name} />
-          <img class='hover' src={imgTwo} alt={name} />
+          <img className='hover' src={imgTwo} alt={name} />
         </div>
         <div className="card-info">
           <h4>{name}</h4>

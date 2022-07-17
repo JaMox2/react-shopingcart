@@ -30,9 +30,13 @@ code {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.699);
   height: 100vh;
+
+  /* display: none; */
 }
 .cartDisplay{
   position: absolute;
+  overflow-y: scroll;
+  overflow-x: hidden;
   right: 0;
   top: 0;
   width: 32.5%;
@@ -44,6 +48,7 @@ code {
 .cartDisplay h1{
   line-height: 28px;
   /* font-size: 1.2rem; */
+  margin-bottom: 3rem;
   font-weight: 800;
 }
 .cartDisplay .exit{
@@ -56,11 +61,73 @@ code {
   
 }
 .cartDisplay .exit svg{
+  background-color: white;
+  fill: black;
   width: 30px;
   cursor: pointer;
   height: 30px;
   /* padding: 10px; */
 }
+.cartItem{
+  margin-top: 1rem;
+  display: flex;
+  border: 1px solid black;
+  padding: 10px 10px;
+
+}
+.cartItem img{
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  background: white;
+  
+  
+}
+.cartItem > span{
+  text-align: end;
+  font-weight: 900;
+  
+}
+.cartItem .cart-ctrls{
+  /* outline: 1px dotted red; */
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.cartItem .cart-ctrls > span{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.cartItem .cart-ctrls > h6{
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  font-weight: 900;
+}
+.cartItem .cart-ctrls .cart-ctrls-amount{
+  display: flex;
+  gap: 1rem;
+}
+.cartItem .cart-ctrls .cart-ctrls-amount button{
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+.cartItem .cart-ctrls .cart-ctrls-amount button svg{
+  background-color: white;
+  fill: black;
+}
+.cartItem .cart-ctrls .cart-ctrls-amount span{
+  display: grid;
+  place-content: center;
+  font-size: 1.1rem;
+  border: 1px solid black;
+  padding: 0.25rem 1rem;
+}
+
 
 .home{
   width: 100%;
@@ -577,4 +644,3 @@ code {
   background-color: rgba(255, 255, 255, 0);
   fill: black;
 }
-

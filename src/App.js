@@ -5,7 +5,7 @@ import allProducts from "./data/allProducts"
 import Cart from "./Components/Cart";
 import { useEffect, useState } from "react";
 
-function App({cartAmount}) {
+function App({cartAmount, cartItems, updateAmount, showCart, isShowing}) {
 
   const [currentProductSelected, setCurrentProductSelected] =  useState('All Products')
   const [productDisplayed, setProductDisplayed] = useState(allProducts)
@@ -18,18 +18,17 @@ function App({cartAmount}) {
       if(productCategory=='allProduct') return x == x
       return x.categoryId==productCategory
     })
-    console.log(productCatCopy)
     setProductDisplayed(productDisplayed=>productDisplayed = productCatCopy)
   }
 
   return (
     <div className="App">
-      <HeaderShop cartAmount={cartAmount}/>
+      <HeaderShop cartAmount={cartAmount} showCart={showCart}/>
       <div className="mainShop">
         <NavbarShop selectedProduct={currentProductSelected} selectProductEvent={selectProductEvent}/>
         <MainShop productDisplayed={productDisplayed}/>
       </div>
-      <Cart/>
+      <Cart cartItems={cartItems} isShowing={isShowing} showCart={showCart} updateAmount={updateAmount}/>
     </div>
   );
 }

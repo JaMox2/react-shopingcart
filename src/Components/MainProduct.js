@@ -6,7 +6,6 @@ export default function MainProduct({product, getCartAmount}) {
   
   const [currentImg, setCurrentImg] = useState(0)
   let letters = pr.name.split('').map(x=>x==' '?x='':x).join('').toUpperCase()
-  console.log(letters[0])
 
   function newImg(){
     if(currentImg+1 >= pr.gallery.length) return
